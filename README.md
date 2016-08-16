@@ -14,4 +14,12 @@
 - Snip / https://github.com/dlrudie/Snip
 
 ###### Install:
-Holdup
+Recchan - Today at 8:22 PM
+ctrl shift i
+Killer Memestar - Today at 8:24 PM
+ty
+then what was the thing in console?
+Recchan - Today at 8:24 PM
+localStorage.token
+Killer Memestar - Today at 8:24 PM
+TY
