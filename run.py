@@ -37,12 +37,10 @@ async def on_ready():
     song = pull_song()
     savesong = song
     await bot.change_status(discord.Game(name=song))
-    print("Updated status to: {0}".format(song))
     while True:
         song = pull_song()
         if savesong != song:
             await bot.change_status(discord.Game(name=song))
-            print("Updated status to: {0}".format(song))
             savesong = song
         await asyncio.sleep(5)
 
