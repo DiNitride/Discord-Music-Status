@@ -16,8 +16,9 @@
 ###### Install:
 1. Install Snip and run at least once, to generate snip.txt
 2. Find your Discord Login token (See "Finding Login Token below")
-3. Update config.ini with your token and path to snip.txt, your path to snip.txt should look something like this. `C:\Users\User\Documents\Snip\snip.txt`
-4. Run `run.py`
+3. Update defaultconfig.ini with your token and path to snip.txt, your path to snip.txt should look something like this. `C:\Users\User\Documents\Snip\snip.txt`
+4. Rename defaultconfig.ini to config.ini **IMPORTANT**
+5. Run `run.py`
 
 ###### Finding Login Token
 1. While on the Discord Desktop app press `ctrl + shift + i`
