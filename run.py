@@ -10,10 +10,16 @@ try:
 except KeyError:
     print("Please assign your token in config.ini")
     input()
+if token == "":
+    print("Please assign your token in config.ini")
+    input()
 try:
     snip = config['Config']['snip']
 except KeyError:
     print("Please assign your snip directory in config.ini")
+    input()
+if token == "":
+    print("Please assign your token in config.ini")
     input()
 
 # Set's bot's desciption and prefixes in a list
@@ -53,4 +59,7 @@ def pull_song():
 ## FANCY TOKEN LOGIN STUFFS ##
 ##############################
 
-bot.run(token, bot=False)
+try:
+    bot.run(token, bot=False)
+except discord.errors.LoginFailure:
+    print("Invalid token")
