@@ -11,15 +11,16 @@
 
 ###### Requirements:
 - Discord.py / https://github.com/Rapptz/discord.py
-- Snip / https://github.com/dlrudie/Snip
+- Snip / https://github.com/dlrudie/Snip/releases/latest
 
 ###### Install:
-Recchan - Today at 8:22 PM
-ctrl shift i
-Killer Memestar - Today at 8:24 PM
-ty
-then what was the thing in console?
-Recchan - Today at 8:24 PM
-localStorage.token
-Killer Memestar - Today at 8:24 PM
-TY
+1. Install Snip and run at least once, to generate snip.txt
+2. Find your Discord Login token (See "Finding Login Token below")
+3. Update config.ini with your token and path to snip.txt, your path to snip.txt should look something like this. `C:\Users\User\Documents\Snip\snip.txt`
+4. Run `run.py`
+
+###### Finding Login Token
+1. While on the Discord Desktop app press `ctrl + shift + i`
+2. Switch to `console` tab
+3. type `localStorage.token` and press enter
+4. Copy the token inside the quotation marks
