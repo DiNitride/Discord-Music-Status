@@ -12,6 +12,7 @@ The status won't display on your own client for some reason, Discord's fault, ho
 - (Any other program Snip is updated to be able to access)
 
 ###### Requirements:
+- Python 3
 - Discord.py / https://github.com/Rapptz/discord.py
 - Snip / https://github.com/dlrudie/Snip/releases/latest
 
