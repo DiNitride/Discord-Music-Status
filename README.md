@@ -1,6 +1,8 @@
 # Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
+The status won't display on your own client for some reason, Discord's fault, however if you look on another client or mobile you see it will be displayed.
+
 ###### The program will work with:
 - iTunes
 - Spotify
