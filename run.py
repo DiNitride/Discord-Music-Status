@@ -42,12 +42,14 @@ async def on_ready():
     print("---------------------------")
     song = pull_song()
     savesong = song
-    await bot.change_status(discord.Game(name=song))
+    await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name=song))
+    print("Now playing: {}".format(song.encode("ascii", "ignore").decode()))
     while True:
         song = pull_song()
         if savesong != song:
-            await bot.change_status(discord.Game(name=song))
+            await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name=song))
             savesong = song
+            print("Now playing: {}".format(song.encode("ascii", "ignore").decode()))
         await asyncio.sleep(5)
 
 def pull_song():
