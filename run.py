@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 import configparser
+import inspect
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -42,12 +43,12 @@ async def on_ready():
     print("---------------------------")
     song = pull_song()
     savesong = song
-    await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name=song))
+    await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name="\u266B {}".format(song)))
     print("Now playing: {}".format(song.encode("ascii", "ignore").decode()))
     while True:
         song = pull_song()
         if savesong != song:
-            await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name=song))
+            await bot.change_presence(afk=True, status=discord.Status.idle, game=discord.Game(name="\u266B {}".format(song)))
             savesong = song
             print("Now playing: {}".format(song.encode("ascii", "ignore").decode()))
         await asyncio.sleep(5)
@@ -57,10 +58,34 @@ def pull_song():
     song = file.read()
     return song
 
+# Ping Pong
+# Testing the response of the bot
+@bot.command()
+async def ping():
+    """Pong. Test's responsiveness of bot"""
+    await bot.say("Music: Pong")
+
+@bot.command(pass_context=True, name="eval")
+async def eval_(ctx, *, code: str):
+    """Evaluates a line of code provided"""
+    code = code.strip("` ")
+    server = ctx.message.server
+    message = ctx.message
+    try:
+        result = eval(code)
+        if inspect.isawaitable(result):
+            result = await result
+    except Exception as e:
+        await bot.say("```py\nInput: {}\n{}: {}```".format(code, type(e).__name__, e))
+    else:
+        await bot.say("```py\nInput: {}\nOutput: {}\n```".format(code, result))
+    await bot.delete_message(message)
+
 ##############################
 ## FANCY TOKEN LOGIN STUFFS ##
 ##############################
 
+print("Logging in")
 try:
     bot.run(token, bot=False)
 except discord.errors.LoginFailure:
