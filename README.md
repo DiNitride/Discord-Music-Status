@@ -24,7 +24,9 @@ The status won't display on your own client for some reason, Discord's fault, ho
 5. Run `run.py`
 
 ###### Finding Login Token
-1. While on the Discord Desktop app press `ctrl + shift + i`
-2. Switch to `console` tab
-3. type `localStorage.token` and press enter
-4. Copy the token inside the quotation marks
+1. Open Discord
+2. Press Ctrl+Shift+i
+3. Click "Application" tab
+4. Expand Storage > Local Storage > https://discordapp.com/
+5. Find "token" under "key"
+6. Copy the text in quotes on the same row
