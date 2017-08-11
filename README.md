@@ -22,11 +22,13 @@ The status won't display on your own client for some reason, Discord's fault, ho
 - Snip / https://github.com/dlrudie/Snip/releases/latest
 
 ##### Install:
-1. Install Snip and run at least once, to generate snip.txt
-2. Find your Discord Login token (See "Finding Login Token below")
-3. Update defaultconfig.ini with your token and path to snip.txt, your path to snip.txt should look something like this. `C:\Users\User\Documents\Snip\snip.txt`
-4. Rename defaultconfig.ini to config.ini **IMPORTANT**
-5. Run `run.py`
+1. Install requirements above
+2. Start up snip, this must be done at least once before starting the script, and snip **must be running while you use it!**
+3. Find your Discord token *See below*
+4. Run `run.py` to generate a config file
+5. Configure the file with your token and path to snip.txt *Neither should have quotation marks*
+6. Start `run.py`
+
 
 ##### Finding Login Token
 1. Open Discord
