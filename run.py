@@ -15,6 +15,8 @@ logger.handlers.append(FileHandler("last-run.log", bubble=True, mode="w"))
 
 logger.debug("Loading config files")
 
+default_config = "[Config]\ntoken = \nsnip = "
+
 config = configparser.ConfigParser()
 
 token = ""
@@ -49,10 +51,8 @@ if os.path.exists("config.ini"):
 
 else:
     logger.error("No config file, creating one now")
-    with open("default.config.ini") as f:
-        config = f.read()
     with open("config.ini", 'w') as f:
-        f.write(config)
+        f.write(default_config)
     logger.info("Config created, please set config!")
     time.sleep(3)
     exit(0)
