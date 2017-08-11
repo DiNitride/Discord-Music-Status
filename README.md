@@ -7,7 +7,7 @@ The status won't display on your own client for some reason, Discord's fault, ho
 
 ![Profile](http://storage.dinitride.win/profile_example.png)
 
-##### The program will work with:
+#### The program will work with:
 - Spotify
 - iTunes
 - Winamp
@@ -16,12 +16,12 @@ The status won't display on your own client for some reason, Discord's fault, ho
 - Google Play Music Desktop Player
 - Quod Libet
 
-##### Requirements:
+#### Requirements:
 - Python 3.6
 - Discord.py and Logbook installed via pip
 - Snip / https://github.com/dlrudie/Snip/releases/latest
 
-##### Install:
+#### Install:
 1. Install requirements above
 2. Start up snip, this must be done at least once before starting the script, and snip **must be running while you use it!**
 3. Find your Discord token *See below*
@@ -38,7 +38,7 @@ snip = D:\DiNitride\Snip\Snip.txt
 
 *Your token will only be prefixed with mfa if you have 2 factor auth enabled*
 
-##### Finding Login Token
+#### Finding Login Token
 1. Open Discord
 2. Press Ctrl+Shift+i
 3. Click "Application" tab
@@ -46,12 +46,12 @@ snip = D:\DiNitride\Snip\Snip.txt
 5. Find "token" under "key"
 6. Copy the text in quotes on the same row, DO NOT KEEP THE QUOTES
 
-##### Installing Logbook and Discord via Pip
+#### Installing Logbook and Discord via Pip
 
 Open command prompt, and type `pip install logbook` and `pip install discord`
 This should install both modules
 
 If for some reason it doesn't, [read here](https://packaging.python.org/tutorials/installing-packages/)
 
-##### Logging out
+#### Logging out
 To log out, send "m.quit" anywhere on Discord
