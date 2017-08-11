@@ -46,5 +46,12 @@ snip = D:\DiNitride\Snip\Snip.txt
 5. Find "token" under "key"
 6. Copy the text in quotes on the same row, DO NOT KEEP THE QUOTES
 
+##### Installing Logbook and Discord via Pip
+
+Open command prompt, and type `pip install logbook` and `pip install discord`
+This should install both modules
+
+If for some reason it doesn't, [read here](https://packaging.python.org/tutorials/installing-packages/)
+
 ##### Logging out
 To log out, send "m.quit" anywhere on Discord
