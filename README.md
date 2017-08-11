@@ -24,10 +24,13 @@ The status won't display on your own client for some reason, Discord's fault, ho
 4. Rename defaultconfig.ini to config.ini **IMPORTANT**
 5. Run `run.py`
 
-###### Finding Login Token
+##### Finding Login Token
 1. Open Discord
 2. Press Ctrl+Shift+i
 3. Click "Application" tab
 4. Expand Storage > Local Storage > https://discordapp.com/
 5. Find "token" under "key"
 6. Copy the text in quotes on the same row, DO NOT KEEP THE QUOTES
+
+##### Logging out
+To log out, send "m.quit" anywhere on Discord
