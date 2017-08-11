@@ -11,7 +11,7 @@ from logbook import Logger, StreamHandler, FileHandler
 
 logger = Logger("Discord Music")
 logger.handlers.append(StreamHandler(sys.stdout, bubble=True))
-logger.handlers.append(FileHandler("last-run.log", bubble=True))
+logger.handlers.append(FileHandler("last-run.log", bubble=True, mode="w"))
 
 logger.debug("Loading config files")
 
