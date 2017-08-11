@@ -3,6 +3,10 @@
 
 The status won't display on your own client for some reason, Discord's fault, however if you look on another client or mobile you see it will be displayed.
 
+![Sidebar](http://storage.dinitride.win/sidebar_example.png)
+
+![Profile](http://storage.dinitride.win/profile_example.png)
+
 ##### The program will work with:
 - Spotify
 - iTunes
