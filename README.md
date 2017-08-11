@@ -48,7 +48,7 @@ snip = D:\DiNitride\Snip\Snip.txt
 
 #### Installing Logbook and Discord via Pip
 
-Open command prompt, and type `pip install logbook` and `pip install discord`
+Open command prompt, and type `pip install logbook` and `pip install discord.py`
 This should install both modules
 
 If for some reason it doesn't, [read here](https://packaging.python.org/tutorials/installing-packages/)
