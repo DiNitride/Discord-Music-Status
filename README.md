@@ -29,6 +29,14 @@ The status won't display on your own client for some reason, Discord's fault, ho
 5. Configure the file with your token and path to snip.txt *Neither should have quotation marks*
 6. Start `run.py`
 
+*Example Config*
+```
+[Config]
+token = mfa.a4g2Wazb... 
+snip = D:\DiNitride\Snip\Snip.txt
+```
+
+*Your token will only be prefixed with mfa if you have 2 factor auth enabled*
 
 ##### Finding Login Token
 1. Open Discord
