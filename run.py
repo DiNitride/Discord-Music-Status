@@ -84,14 +84,18 @@ async def music_loop():
     while not bot.is_closed:
         song = pull_song()
         if song != last_song:
-            await bot.change_presence(afk=True, status=discord.Status.invisible, game=discord.Game(name=song))
             last_song = song
-            logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
+            if song == "":
+                await bot.change_presence(afk=True, status=discord.Status.invisible, game=None)
+                logger.info("Cleared Discord Status because no song is playing")
+            else:
+                await bot.change_presence(afk=True, status=discord.Status.invisible, game=discord.Game(name=song))
+                logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
         await asyncio.sleep(8)
 
 
 def pull_song():
-    with open(snip, encoding="utf8") as f:
+    with open(snip, encoding="utf-8") as f:
         return f.read()
 
 
