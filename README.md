@@ -3,6 +3,8 @@
 
 The status won't display on your own client for some reason, Discord's fault, however if you look on another client or mobile you see it will be displayed.
 
+**Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
+
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
 ![Profile](http://storage.dinitride.win/profile_example.png)
