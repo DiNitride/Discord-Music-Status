@@ -61,7 +61,7 @@ This program has been tested and is 100% functional, providing the enviroments i
 ###### Ensure Discord.py is updated to the latest version
 A breaking change may have happened to the Discord API, which is out of my control, and you will need to update your installation. In the event that the problem is not fixed by the library, and I need to update my code, please open an issue in the issues tab.
 
-`pip install discord.py --update`
+`pip install discord.py --upgrade`
 
 ###### Make sure your config is set up correctly
 Study the example config above and make sure that your paths **are pointing to the correct file**
