@@ -89,7 +89,11 @@ async def music_loop():
                 await bot.change_presence(afk=True, status=discord.Status.invisible, game=None)
                 logger.info("Cleared Discord Status because no song is playing")
             else:
-                await bot.change_presence(afk=True, status=discord.Status.invisible, game=discord.Game(name=song))
+                await bot.change_presence(
+                    afk=True,
+                    status=discord.Status.invisible,
+                    game=discord.Game(name=song, type=2)
+                    )
                 logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
         await asyncio.sleep(8)
 
