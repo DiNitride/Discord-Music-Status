@@ -1,7 +1,9 @@
 # Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
-The status won't display on your own client for some reason, Discord's fault, however if you look on another client or mobile you see it will be displayed.
+The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
+
+**Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
 
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
@@ -21,7 +23,7 @@ The status won't display on your own client for some reason, Discord's fault, ho
 - Discord.py and Logbook installed via pip
 - Snip / https://github.com/dlrudie/Snip/releases/latest
 
-#### Install:
+### Install:
 1. Install requirements above
 2. Start up snip, this must be done at least once before starting the script, and snip **must be running while you use it!**
 3. Find your Discord token *See below*
@@ -53,5 +55,23 @@ This should install both modules
 
 If for some reason it doesn't, [read here](https://packaging.python.org/tutorials/installing-packages/)
 
+### FAQ and Troubleshooting
+This program has been tested and is 100% functional, providing the enviroments it is run in are correct.
+
+###### Ensure Discord.py is updated to the latest version
+A breaking change may have happened to the Discord API, which is out of my control, and you will need to update your installation. In the event that the problem is not fixed by the library, and I need to update my code, please open an issue in the issues tab.
+
+`pip install discord.py --upgrade`
+
+###### Make sure your config is set up correctly
+Study the example config above and make sure that your paths **are pointing to the correct file**
+*snip.exe IS NOT the correct file, snip.txt is, this will cause an error*
+
+**Do not add me as a friend on Discord and DM me for help.**
+Github has an issues feature which works perfectly well, allows me to keep track of problems better, and in turn allows others to see the solution when we get to it.
+
 #### Logging out
-To log out, send "m.quit" anywhere on Discord
+To log out, send "m.quit" anywhere on Discord and the script should log you out properly
+
+
+### Lots of love, DiNitride xoxoxo
