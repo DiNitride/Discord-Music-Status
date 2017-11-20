@@ -54,8 +54,6 @@ logger.info("Config loaded")
 dbus_loop = DBusGMainLoop()
 bus = dbus.SessionBus(mainloop=dbus_loop)
 
-players_ids = list(pympris.available_players())
-mp = pympris.MediaPlayer(players_ids[0], bus)
 
 bot = commands.Bot(command_prefix=['m.'], self_bot=True)
 bot.remove_command('help')
@@ -97,10 +95,17 @@ async def music_loop():
 
 
 def pull_song():
-    metadata = metadata = mp.player.Metadata
-    title = str(metadata['xesam:title'])
-    artist = str(metadata['xesam:artist'][0])
-    Nowplay = title + " by " + artist
+    try:
+        players_ids = list(pympris.available_players())
+        mp = pympris.MediaPlayer(players_ids[0], bus)
+        metadata = metadata = mp.player.Metadata
+        print(str(metadata))
+        title = str(metadata['xesam:title'])
+        artist = str(metadata['xesam:artist'][0])
+        Nowplay = title + " by " + artist
+    except (IndexError, KeyError):
+        # Rhythm box will make metadata empty when nothing is playing, this also catches no players at all
+        Nowplay = ""
     return Nowplay
 
 
