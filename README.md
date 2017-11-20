@@ -1,7 +1,7 @@
-# Discord-Music-Status
+# Discord-MPRIS-Status
 ## A Program to display your currently played Music as your Discord Status
 
-The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
+The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check or use your phone, becuse that works.
 
 **This is a attempt at making this use mpris so that linux users can have this**
 
