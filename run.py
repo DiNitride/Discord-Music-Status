@@ -1,5 +1,4 @@
-import dbus
-from dbus.mainloop.glib import DBusGMainLoop
+
 
 import asyncio
 import configparser
@@ -7,7 +6,7 @@ import inspect
 import sys
 import time
 import os
-import pympris
+
 
 import discord
 from discord.ext import commands
@@ -19,12 +18,12 @@ logger.handlers.append(FileHandler("last-run.log", bubble=True, mode="w"))
 
 logger.debug("Loading config files")
 
-default_config = "[Config]\ntoken = "
+default_config = "[Config]\ntoken = \nsnip = "
 
 config = configparser.ConfigParser()
 
 token = ""
-
+snip = ""
 
 if os.path.exists("config.ini"):
     config.read("config.ini")
@@ -41,6 +40,14 @@ if os.path.exists("config.ini"):
         time.sleep(5)
         exit(1)
 
+    try:
+        snip = config['Config']['snip']
+    except KeyError:
+        logger.critical("(Windows)No path to snip found in config, please ensure that the config formatting is correct")
+
+    
+
+
 else:
     logger.error("No config file, creating one now")
     with open("config.ini", 'w') as f:
@@ -51,9 +58,13 @@ else:
 
 logger.info("Config loaded")
 
-dbus_loop = DBusGMainLoop()
-bus = dbus.SessionBus(mainloop=dbus_loop)
+logger.info("Checking Platform")
 
+if sys.platform.startswith('linux'):
+    import linux as songFetch
+elif sys.platform.startswith('win'):
+    import snip as songFetch
+    songFetch.init(snip)
 
 bot = commands.Bot(command_prefix=['m.'], self_bot=True)
 bot.remove_command('help')
@@ -78,7 +89,7 @@ async def music_loop():
     await asyncio.sleep(1)
     last_song = ""
     while not bot.is_closed:
-        song = pull_song()
+        song = songFetch.pull_song()
         if song != last_song:
             last_song = song
             if song == "":
@@ -92,21 +103,6 @@ async def music_loop():
                     )
                 logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
         await asyncio.sleep(8)
-
-
-def pull_song():
-    try:
-        players_ids = list(pympris.available_players())
-        mp = pympris.MediaPlayer(players_ids[0], bus)
-        metadata = metadata = mp.player.Metadata
-        print(str(metadata))
-        title = str(metadata['xesam:title'])
-        artist = str(metadata['xesam:artist'][0])
-        Nowplay = title + " by " + artist
-    except (IndexError, KeyError):
-        # Rhythm box will make metadata empty when nothing is playing, this also catches no players at all
-        Nowplay = ""
-    return Nowplay
 
 
 try:
