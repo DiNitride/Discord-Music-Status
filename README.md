@@ -1,32 +1,41 @@
-# Discord-MPRIS-Status
+# Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
-The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check or use your phone, becuse that works.
+The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
 
-**This is a attempt at making this use mpris so that linux users can have this**
+**Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
 
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
 ![Profile](http://storage.dinitride.win/profile_example.png)
 
 #### The program will work with:
-- Mpris
+- Spotify
+- iTunes
+- Winamp
+- foobar2000
+- VLC
+- Google Play Music Desktop Player
+- Quod Libet
 
 #### Requirements:
 - Python 3.6
-- Discord.py, pympris and Logbook installed via pip
+- Discord.py and Logbook installed via pip
+- Snip / https://github.com/dlrudie/Snip/releases/latest
 
 ### Install:
 1. Install requirements above
-2. Find your Discord token *See below*
-3. Run `run.py` to generate a config file
-4. Configure the file with your token
-5. Start `run.py`
+2. Start up snip, this must be done at least once before starting the script, and snip **must be running while you use it!**
+3. Find your Discord token *See below*
+4. Run `run.py` to generate a config file
+5. Configure the file with your token and path to snip.txt *Neither should have quotation marks*
+6. Start `run.py`
 
 *Example Config*
 ```
 [Config]
 token = mfa.a4g2Wazb... 
+snip = D:\DiNitride\Snip\Snip.txt
 ```
 
 *Your token will only be prefixed with mfa if you have 2 factor auth enabled*
@@ -61,7 +70,7 @@ Study the example config above and make sure that your paths **are pointing to t
 **Do not add me as a friend on Discord and DM me for help.**
 Github has an issues feature which works perfectly well, allows me to keep track of problems better, and in turn allows others to see the solution when we get to it.
 
-#### Logging out  
+#### Logging out
 To log out, send "m.quit" anywhere on Discord and the script should log you out properly
 
 
