@@ -1,9 +1,12 @@
+
+
 import asyncio
 import configparser
 import inspect
 import sys
 import time
 import os
+
 
 import discord
 from discord.ext import commands
@@ -40,14 +43,10 @@ if os.path.exists("config.ini"):
     try:
         snip = config['Config']['snip']
     except KeyError:
-        logger.critical("No path to snip found in config, please ensure that the config formatting is correct")
-        time.sleep(5)
-        exit(1)
+        logger.critical("(Windows)No path to snip found in config, please ensure that the config formatting is correct")
 
-    if snip == "":
-        logger.critical("No path to snip set! Exiting")
-        time.sleep(5)
-        exit(1)
+    
+
 
 else:
     logger.error("No config file, creating one now")
@@ -58,6 +57,15 @@ else:
     exit(0)
 
 logger.info("Config loaded")
+
+logger.info("Checking Platform")
+plat = sys.platform
+
+if plat.startswith('linux'):
+    import linux as songFetch
+elif plat.startswith('win'):
+    import snip as songFetch
+    songFetch.init(snip)
 
 bot = commands.Bot(command_prefix=['m.'], self_bot=True)
 bot.remove_command('help')
@@ -82,7 +90,7 @@ async def music_loop():
     await asyncio.sleep(1)
     last_song = ""
     while not bot.is_closed:
-        song = pull_song()
+        song = songFetch.pull_song()
         if song != last_song:
             last_song = song
             if song == "":
@@ -96,11 +104,6 @@ async def music_loop():
                     )
                 logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
         await asyncio.sleep(8)
-
-
-def pull_song():
-    with open(snip, encoding="utf-8") as f:
-        return f.read()
 
 
 try:
