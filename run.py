@@ -1,9 +1,13 @@
+import dbus
+from dbus.mainloop.glib import DBusGMainLoop
+
 import asyncio
 import configparser
 import inspect
 import sys
 import time
 import os
+import pympris
 
 import discord
 from discord.ext import commands
@@ -15,12 +19,12 @@ logger.handlers.append(FileHandler("last-run.log", bubble=True, mode="w"))
 
 logger.debug("Loading config files")
 
-default_config = "[Config]\ntoken = \nsnip = "
+default_config = "[Config]\ntoken = "
 
 config = configparser.ConfigParser()
 
 token = ""
-snip = ""
+
 
 if os.path.exists("config.ini"):
     config.read("config.ini")
@@ -37,18 +41,6 @@ if os.path.exists("config.ini"):
         time.sleep(5)
         exit(1)
 
-    try:
-        snip = config['Config']['snip']
-    except KeyError:
-        logger.critical("No path to snip found in config, please ensure that the config formatting is correct")
-        time.sleep(5)
-        exit(1)
-
-    if snip == "":
-        logger.critical("No path to snip set! Exiting")
-        time.sleep(5)
-        exit(1)
-
 else:
     logger.error("No config file, creating one now")
     with open("config.ini", 'w') as f:
@@ -58,6 +50,12 @@ else:
     exit(0)
 
 logger.info("Config loaded")
+
+dbus_loop = DBusGMainLoop()
+bus = dbus.SessionBus(mainloop=dbus_loop)
+
+players_ids = list(pympris.available_players())
+mp = pympris.MediaPlayer(players_ids[0], bus)
 
 bot = commands.Bot(command_prefix=['m.'], self_bot=True)
 bot.remove_command('help')
@@ -99,8 +97,11 @@ async def music_loop():
 
 
 def pull_song():
-    with open(snip, encoding="utf-8") as f:
-        return f.read()
+    metadata = metadata = mp.player.Metadata
+    title = str(metadata['xesam:title'])
+    artist = str(metadata['xesam:artist'][0])
+    Nowplay = title + " by " + artist
+    return Nowplay
 
 
 try:
