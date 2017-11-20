@@ -59,10 +59,11 @@ else:
 logger.info("Config loaded")
 
 logger.info("Checking Platform")
+plat = sys.platform
 
-if sys.platform.startswith('linux'):
+if plat.startswith('linux'):
     import linux as songFetch
-elif sys.platform.startswith('win'):
+elif plat.startswith('win'):
     import snip as songFetch
     songFetch.init(snip)
 
