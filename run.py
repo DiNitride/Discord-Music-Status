@@ -1,4 +1,4 @@
-
+#! /usr/bin/python3
 
 import asyncio
 import configparser
@@ -102,7 +102,7 @@ async def music_loop():
                     status=discord.Status.invisible,
                     game=discord.Game(name=song, type=2)
                     )
-                logger.info(f"Set Discord status to {song.encode('ascii', 'ignore').decode()}")
+                logger.info(f"Set Discord status to {song.encode('utf-8', 'ignore').decode()}")
         await asyncio.sleep(8)
 
 
