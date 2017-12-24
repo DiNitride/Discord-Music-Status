@@ -1,7 +1,7 @@
 # Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
-The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
+#### The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
 
 **Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
 
