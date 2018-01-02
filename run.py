@@ -72,9 +72,9 @@ async def on_ready():
 @bot.command(name="quit")
 async def _quit():
     await bot.say("Logging out...")
+    await bot.change_presence(afk=True, status=discord.Status.invisible, game=None)
     logger.info("Logging out")
     await bot.logout()
-    exit(0)
 
 
 async def music_loop():
