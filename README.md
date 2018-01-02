@@ -1,7 +1,7 @@
 # Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
-The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
+#### The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
 
 **Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
 
@@ -19,15 +19,15 @@ The status will not show up for you, as Discord does not display it on your own 
 - Quod Libet
 
 #### Requirements:
-- Python 3.6
-- Discord.py and Logbook installed via pip
+- Python 3.6+
+- Discord.py and Logbook installed via pip (Pip is the Python package manager solution, there are plenty of guides on how to install packages with Pip available)
 - Snip / https://github.com/dlrudie/Snip/releases/latest
 
 ### Install:
 1. Install requirements above
 2. Start up snip, this must be done at least once before starting the script, and snip **must be running while you use it!**
 3. Find your Discord token *See below*
-4. Run `run.py` to generate a config file
+4. Run `run.py` to generate a `config.ini` file (If a file is not generated, see FAQ)
 5. Configure the file with your token and path to snip.txt *Neither should have quotation marks*
 6. Start `run.py`
 
@@ -39,6 +39,8 @@ snip = D:\DiNitride\Snip\Snip.txt
 ```
 
 *Your token will only be prefixed with mfa if you have 2 factor auth enabled*
+
+**Please** only edit the `config.ini` file created, ***NOT THE SOURCE CODE***
 
 #### Finding Login Token
 1. Open Discord
@@ -62,6 +64,11 @@ This program has been tested and is 100% functional, providing the enviroments i
 A breaking change may have happened to the Discord API, which is out of my control, and you will need to update your installation. In the event that the problem is not fixed by the library, and I need to update my code, please open an issue in the issues tab.
 
 `pip install discord.py --upgrade`
+or
+`python -m pip install discord.py --upgrade`
+
+###### Config file is not genereated!
+If after running the `run.py` once you find no config file has been generated, then please try running the script within a command prompt or terminal window with Python directly (`C:\Users\DiNitride\Path\To\Dir>python run.py` or `$ python run.py`) so you can see the output. There may be another unresolved issue which you cannot otherwise see. Another issue is that the script may not have permissions to create a file, try running as administrator. If you still cannot create a config file, try creating one manually.
 
 ###### Make sure your config is set up correctly
 Study the example config above and make sure that your paths **are pointing to the correct file**
