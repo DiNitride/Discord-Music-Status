@@ -1,9 +1,13 @@
 # Discord-Music-Status
 ## A Program to display your currently played Music as your Discord Status
 
-#### The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
+### The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
 
-**Due to Snip being Windows only, I can only provide support for this program on Windows, and furthermore it will only actually work on Windows unless you pray to the Linux gods or Steve Jobs or smth**
+*Due to Snip being Windows only, the default install instructions will only be applicable for Windows. However as the script is Python, as long as you find some program to spit out your music to a text file, you can configre that text file instead and it will run on any machine Python will run on*
+
+**WARNING: Using a self-bot is technically against Discord's TOS, I am not accountable for any action they take due to you running this bot. However, unless you use it right in their face, they rarely take any action**
+
+**PROCEED WITH CAUTION**
 
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
