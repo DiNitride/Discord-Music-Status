@@ -5,7 +5,7 @@
 
 *Due to Snip being Windows only, the default install instructions will only be applicable for Windows. However as the script is Python, as long as you find some program to spit out your music to a text file, you can configre that text file instead and it will run on any machine Python will run on*
 
-**WARNING: Using a self-bot is technically against Discord's TOS, I am not accountable for any action they take due to you running this bot. However, unless you use it right in their face, they rarely take any action. PROCEED WITH CAUTION**
+**WARNING: Using a self-bot is technically against Discord's TOS (I originally wrote this when Discord had no statement on them and they were allowed), I am not accountable for any action they take due to you running this bot. However, unless you use it right in their face, they rarely take any action. PROCEED WITH CAUTION**
 
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
