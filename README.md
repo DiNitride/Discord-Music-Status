@@ -1,4 +1,5 @@
 # Discord-Music-Status
+# This project is old, outdated, broken, non-functional, useless, unmaintained, abandoned, or any other word to that effect. I do not update or maintain this projected, please stop adding me on Discord and going "selfbot?". I'm not going to start working on this again, nor am I going to make you a selfbot (Unless you pay me, in which case I'll consider it)
 
 # Discontinued and Abandoned
 
