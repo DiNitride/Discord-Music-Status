@@ -4,10 +4,6 @@ This project is legacy. Discord has implemented this as a native feature for Spo
 
 **WARNING: Using a self-bot is technically against Discord's TOS (I originally wrote this when Discord had no statement on them and they were allowed), I am not accountable for any action they take due to you running this bot.**
 
-![Sidebar](http://storage.dinitride.win/sidebar_example.png)
-
-![Profile](http://storage.dinitride.win/profile_example.png)
-
 #### The program will work with:
 - Spotify
 - iTunes
