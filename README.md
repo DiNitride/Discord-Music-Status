@@ -1,5 +1,5 @@
 # Discord-Music-Status
-## A Program to display your currently played Music as your Discord Status
+### A Program to display your currently played Music as your Discord Status
 This project is legacy. Discord has implemented this as a native feature for Spotify. As suchg, this project is no longer maintained.
 
 **WARNING: Using a self-bot is technically against Discord's TOS (I originally wrote this when Discord had no statement on them and they were allowed), I am not accountable for any action they take due to you running this bot.**
