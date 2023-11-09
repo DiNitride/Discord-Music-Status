@@ -1,15 +1,8 @@
 # Discord-Music-Status
-# This project is old, outdated, broken, non-functional, useless, unmaintained, abandoned, or any other word to that effect. I do not update or maintain this projected, please stop adding me on Discord and going "selfbot?". I'm not going to start working on this again, nor am I going to make you a selfbot (Unless you pay me, in which case I'll consider it)
-
-# Discontinued and Abandoned
-
 ## A Program to display your currently played Music as your Discord Status
+This project is legacy. Discord has implemented this as a native feature for Spotify. As suchg, this project is no longer maintained.
 
-### The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
-
-*Due to Snip being Windows only, the default install instructions will only be applicable for Windows. However as the script is Python, as long as you find some program to spit out your music to a text file, you can configre that text file instead and it will run on any machine Python will run on*
-
-**WARNING: Using a self-bot is technically against Discord's TOS (I originally wrote this when Discord had no statement on them and they were allowed), I am not accountable for any action they take due to you running this bot. However, unless you use it right in their face, they rarely take any action. PROCEED WITH CAUTION**
+**WARNING: Using a self-bot is technically against Discord's TOS (I originally wrote this when Discord had no statement on them and they were allowed), I am not accountable for any action they take due to you running this bot.**
 
 ![Sidebar](http://storage.dinitride.win/sidebar_example.png)
 
@@ -26,8 +19,10 @@
 
 #### Requirements:
 - Python 3.6+
-- Discord.py and Logbook installed via pip (Pip is the Python package manager solution, there are plenty of guides on how to install packages with Pip available)
-- Snip / https://github.com/dlrudie/Snip/releases/latest
+- Discord.py and Logbook python modules installed via pip
+  `pip install logbook`
+  `pip install discord.py`
+- Snip / https://github.com/dlrudie/Snip/releases/latest. *Due to Snip being Windows only, the default install instructions will only be applicable for Windows. However as the script is Python, as long as you find some program to spit out your music to a text file, you can configre that text file instead and it will run on any machine Python will run on*
 
 ### Install:
 1. Install requirements above
@@ -35,7 +30,7 @@
 3. Find your Discord token *See below*
 4. Run `run.py` to generate a `config.ini` file (If a file is not generated, see FAQ)
 5. Configure the file with your token and path to snip.txt *Neither should have quotation marks*
-6. Start `run.py`
+6. Start `run.py`. The status will not show up for you, as Discord does not display it on your own client when you edit it. I cannot fix this. Your friends will be able to see it however, or you can log into another account and check.
 
 *Example Config*
 ```
@@ -46,8 +41,6 @@ snip = D:\DiNitride\Snip\Snip.txt
 
 *Your token will only be prefixed with mfa if you have 2 factor auth enabled*
 
-**Please** only edit the `config.ini` file created, ***NOT THE SOURCE CODE***
-
 #### Finding Login Token
 1. Open Discord
 2. Press Ctrl+Shift+i
@@ -56,16 +49,7 @@ snip = D:\DiNitride\Snip\Snip.txt
 5. Find "token" under "key"
 6. Copy the text in quotes on the same row, DO NOT KEEP THE QUOTES
 
-#### Installing Logbook and Discord via Pip
-
-Open command prompt, and type `pip install logbook` and `pip install discord.py`
-This should install both modules
-
-If for some reason it doesn't, [read here](https://packaging.python.org/tutorials/installing-packages/)
-
 ### FAQ and Troubleshooting
-This program has been tested and is 100% functional, providing the enviroments it is run in are correct.
-
 ###### Ensure Discord.py is updated to the latest version
 A breaking change may have happened to the Discord API, which is out of my control, and you will need to update your installation. In the event that the problem is not fixed by the library, and I need to update my code, please open an issue in the issues tab.
 
@@ -85,6 +69,3 @@ Github has an issues feature which works perfectly well, allows me to keep track
 
 #### Logging out
 To log out, send "m.quit" anywhere on Discord and the script should log you out properly
-
-
-### Lots of love, DiNitride xoxoxo
